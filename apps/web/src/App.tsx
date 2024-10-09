@@ -1,11 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useEffect, useState } from 'react'
 import viteLogo from '/vite.svg'
+import { useService } from 'electron-bridge-ipc/electron-sandbox'
+import { IFileSystemService } from '../../electron/src/interfaces/IFileSystemService'
+import reactLogo from './assets/react.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const fileSystemService = useService<IFileSystemService>('fileSystem')
+  useEffect(() => {
+    fileSystemService.stat('C:\\Users').then((res) => {
+      console.log(res)
+    })
+  }, [])
   return (
     <>
       <div>
@@ -16,7 +23,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1 className="!text-red-700">Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount(count => count + 1)}>
           count is

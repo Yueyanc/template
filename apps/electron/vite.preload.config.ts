@@ -8,29 +8,25 @@ const config: UserConfig = {
   mode: process.env.MODE,
   root: PACKAGE_ROOT,
   envDir: PROJECT_ROOT,
-  resolve: {
-    alias: {
-      '/@/': `${join(PACKAGE_ROOT, 'src')}/`,
-    },
-  },
   build: {
-    emptyOutDir: false,
-    ssr: true,
+    ssr: false,
     sourcemap: 'inline',
     outDir: 'dist',
     assetsDir: '.',
     minify: process.env.MODE !== 'development',
     lib: {
       entry: {
-        index: 'src/index.ts',
+        preload: 'src/preload/index.ts',
       },
-      formats: ['es'],
+      formats: ['cjs'],
     },
     rollupOptions: {
+      external: ['electron'],
       output: {
-        entryFileNames: '[name].mjs',
+        entryFileNames: '[name].cjs',
       },
     },
+    emptyOutDir: false,
     reportCompressedSize: false,
   },
 }

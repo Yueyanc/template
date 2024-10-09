@@ -8,6 +8,7 @@ export default antfu({
     "node/prefer-global/process": "off",
     "ts/no-require-imports": "off",
     "no-console": "off",
+    "ts/consistent-type-imports": "off",
     "unused-imports/no-unused-vars": "off",
     "ts/no-var-requires": "off",
     "ts/no-use-before-define": "off",

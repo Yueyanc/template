@@ -1,3 +1,3 @@
-import { contextBridge } from 'electron'
+import { createPreload } from 'electron-bridge-ipc/electron-preload'
 
-contextBridge.exposeInMainWorld('_electron', {})
+createPreload()

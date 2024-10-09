@@ -46,9 +46,10 @@ function setupMainPackageWatcher({ resolvedUrls }: ViteDevServer) {
           console.log('Reloading electron app...', String(electronPath))
           /** 启动新的electron进程 */
           electronApp = spawn(String(electronPath), ['--inspect', '.'], {
-            // stdio: 'inherit',
+            // stdio: "inherit",
             // 设置工作目录
             cwd: path.resolve(__dirname, '../apps/electron'),
+            env: { ...process.env, FORCE_COLOR: '1' },
           })
 
           electronApp.stdout?.on('data', (data) => {
@@ -78,6 +79,36 @@ function setupMainPackageWatcher({ resolvedUrls }: ViteDevServer) {
 }
 
 /**
+ * 设置`preload`包的监听器
+ * 当文件发生变化时，重新加载网页。
+ * @param {import('vite').ViteDevServer} watchServer 渲染器监听服务器实例。
+ * 需要访问页面的web socket。通过向socket发送`full-reload`命令，重新加载网页。
+ */
+function setupPreloadPackageWatcher({ ws }: ViteDevServer) {
+  return build({
+    mode,
+    logLevel,
+    configFile: 'apps/electron/vite.preload.config.ts',
+    build: {
+      /**
+       * 设置为{}以启用rollup监听器
+       * @see https://vitejs.dev/config/build-options.html#build-watch
+       */
+      watch: {},
+    },
+    plugins: [
+      {
+        name: 'reload-page-on-preload-package-change',
+        writeBundle() {
+          ws.send({
+            type: 'full-reload',
+          })
+        },
+      },
+    ],
+  })
+}
+/**
  * 渲染器包的开发服务器 必须是第一个启动，
  * 因为{@link setupMainPackageWatcher}和{@link setupPreloadPackageWatcher}
  * 依赖于开发服务器的属性
@@ -92,4 +123,5 @@ function setupMainPackageWatcher({ resolvedUrls }: ViteDevServer) {
   ).listen()
   rendererWatchServer.printUrls()
   await setupMainPackageWatcher(rendererWatchServer)
+  await setupPreloadPackageWatcher(rendererWatchServer)
 })()

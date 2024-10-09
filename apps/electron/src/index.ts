@@ -6,7 +6,7 @@ import 'reflect-metadata'
 async function main() {
   const application = await ServiceContainer.getAsync<Application>(Application)
   app.whenReady().then(() => {
-    application.WindowService.createWindow()
+    application.createMainWindow()
   })
 }
 
