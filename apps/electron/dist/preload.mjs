@@ -1,0 +1,3 @@
+import { contextBridge } from "electron";
+contextBridge.exposeInMainWorld("_electron", {});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJlbG9hZC5tanMiLCJzb3VyY2VzIjpbIi4uL3NyYy9wcmVsb2FkL2luZGV4LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNvbnRleHRCcmlkZ2UgfSBmcm9tIFwiZWxlY3Ryb25cIjtcblxuY29udGV4dEJyaWRnZS5leHBvc2VJbk1haW5Xb3JsZChcIl9lbGVjdHJvblwiLCB7fSk7XG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUVBLGNBQWMsa0JBQWtCLGFBQWEsRUFBRTsifQ==

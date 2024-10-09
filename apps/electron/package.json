@@ -1,0 +1,24 @@
+{
+  "name": "electron",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "dist/index.mjs",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "electron": "^32.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.3",
+    "atomically": "^2.0.3",
+    "inversify": "^6.0.2",
+    "reflect-metadata": "^0.2.2",
+    "vite": "^5.4.8",
+    "yaml": "^2.5.1"
+  }
+}
