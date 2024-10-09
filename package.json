@@ -7,15 +7,20 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
+    "dev": "tsx scripts/watch.ts",
     "prepare": "husky"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.25.1",
     "commitizen": "^4.3.0",
     "cz-git": "^1.9.4",
+    "electron": "^32.1.2",
     "eslint": "^9.9.0",
     "husky": "^9.1.4",
-    "lint-staged": "^15.2.9"
+    "lint-staged": "^15.2.9",
+    "tsx": "^4.19.1",
+    "turbo": "^2.1.2",
+    "vite": "^5.4.8"
   },
   "config": {
     "commitizen": {
