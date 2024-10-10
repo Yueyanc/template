@@ -30,10 +30,10 @@ export class LoggerService {
           prints.push(logSymbols.info, chalk.blue('info'))
           break
         case 'warn':
-          prints.push(logSymbols.warning)
+          prints.push(logSymbols.warning, chalk.yellow('warning'))
           break
         case 'error':
-          prints.push(logSymbols.error)
+          prints.push(logSymbols.error, chalk.bgRed('Error'))
           break
         default:
           break

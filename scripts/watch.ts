@@ -108,6 +108,7 @@ function setupPreloadPackageWatcher({ ws }: ViteDevServer) {
     ],
   })
 }
+
 /**
  * 渲染器包的开发服务器 必须是第一个启动，
  * 因为{@link setupMainPackageWatcher}和{@link setupPreloadPackageWatcher}

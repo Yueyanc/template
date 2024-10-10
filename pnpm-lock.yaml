@@ -29,6 +29,9 @@ importers:
       lint-staged:
         specifier: ^15.2.9
         version: 15.2.9
+      tailwindcss:
+        specifier: ^3.4.13
+        version: 3.4.13
       tsx:
         specifier: ^4.19.1
         version: 4.19.1
