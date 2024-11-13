@@ -6,10 +6,12 @@ export default antfu({
   ignores: ["packages/cli/babel.js"],
   rules: {
     "node/prefer-global/process": "off",
+    "no-cond-assign": "off",
     "ts/no-require-imports": "off",
     "no-console": "off",
     "ts/consistent-type-imports": "off",
     "unused-imports/no-unused-vars": "off",
+    "ts/no-unused-expressions": "off",
     "ts/no-var-requires": "off",
     "ts/no-use-before-define": "off",
     "ts/ban-ts-comment": "off",

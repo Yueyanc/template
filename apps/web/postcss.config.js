@@ -1,4 +1,5 @@
-import tailwindConfig from "./tailwind.config";
+import tailwindConfig from "./tailwind.config.js";
+
 export default {
   plugins: {
     tailwindcss: tailwindConfig,

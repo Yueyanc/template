@@ -1,2 +1,3 @@
-# electron-vite-template
-Complete electron solution
+# reader-lite
+
+持续集成测试

@@ -1,0 +1,21 @@
+{
+  "name": "shared",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "exports": {
+    "./interfaces/*": {
+      "types": "./src/interfaces/*.ts",
+      "import": "./src/interfaces/*.ts"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "electron-bridge-ipc": "^0.1.7"
+  }
+}

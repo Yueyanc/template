@@ -1,0 +1,18 @@
+[data-theme="light"] {
+  --rl-hover-background:55 0% 80%;
+}
+[data-theme="dark"] {
+  --rl-hover-background:55 0% 80%;
+  --rl-background:27, 27, 27;
+  --rl-background-light:55, 55, 55;
+}
+[data-reader-theme="yellow"] {
+  --rl-test: rgb(55, 55, 55);
+  --rl-reader-background: 230, 225, 214;
+  --rl-reader-background-light: 245, 241, 232
+}
+[data-theme="dark"][data-reader-theme="yellow"] {
+  --rl-test: rgb(10, 10, 10);
+  --rl-reader-background: 10, 10, 10;
+  --rl-reader-background-light: 13, 13, 13
+}

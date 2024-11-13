@@ -1,5 +1,5 @@
 import fse from 'fs-extra'
-import { IFileSystemService } from '../interfaces/IFileSystemService'
+import type { IFileSystemService } from 'shared/interfaces/index'
 
 export class FileSystemService implements IFileSystemService {
   async stat(source: string) {

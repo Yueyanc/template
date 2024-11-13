@@ -1,2 +1,4 @@
 node_modules
 apps/electron/dist
+apps/electron/output
+apps/electron/app

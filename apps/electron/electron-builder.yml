@@ -1,0 +1,25 @@
+appId: cn.yueyanc.book
+productName: ReaderLite
+copyright: Copyright © 2015 Yueyanc
+target: nsis
+extraMetadata:
+  name: ReaderLite
+  author: Yueyanc
+directories:
+  output: output
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+      - dist
+win:
+  target: nsis
+  icon: resources/icons/win/icon.ico
+nsis:
+  oneClick: false
+  perMachine: true
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: true
+  artifactName: ${productName}-v${version}.${ext}

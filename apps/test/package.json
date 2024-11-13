@@ -1,0 +1,17 @@
+{
+  "name": "reader-lite-test",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.7.3",
+    "electron-playwright-helpers": "^1.7.1"
+  }
+}
